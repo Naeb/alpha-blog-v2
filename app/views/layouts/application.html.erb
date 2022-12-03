@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AlphaBlog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "custom" %>
+  <%= javascript_importmap_tags %>
+</head>
+<body class="d-flex flex-column">
+  <%= render 'layouts/navigation', status: :unprocessable_entity %>
+  <div id="page-content">
+    <%= render 'layouts/messages', status: :unprocessable_entity %>
+    <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
+</body>
+</html>
