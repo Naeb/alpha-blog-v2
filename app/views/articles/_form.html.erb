@@ -9,10 +9,16 @@
           <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Title of article" %>
         </div>
       </div>
-      <div class="row">
+      <div class="row mb-2">
         <%= f.label :description, class: "col-2 col-form-label text-light" %>
         <div class="col-10">
           <%= f.text_area :description, rows: 10, class: "form-control shadow rounded", placeholder: "Description of article" %>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <%= f.label :category, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.collection_select(:category_ids, Category.all, :id, :name, {prompt: "Make your selection from the list below (Can be empty)"}, {multiple: true, size: 3, class: "form-select shadow rounded"}) %>
         </div>
       </div>
       <div class="row justify-content-md-center">
